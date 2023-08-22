@@ -1,0 +1,92 @@
+@import "mixins";
+
+@font-face {
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Josefin Sans"),
+    url("https://fonts.cdnfonts.com/s/15771/JosefinSans-Regular.woff")
+      format("woff");
+}
+@font-face {
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Josefin Sans"),
+    url("https://fonts.cdnfonts.com/s/15771/JosefinSans-Bold.woff")
+      format("woff");
+}
+
+:root {
+  --background-primary: #fafafa;
+  --background-elements: #fff;
+  --background-dragging: hsl(0, 0%, 96%);
+  --border-color: #e3e4f1;
+  --placeholder-color: #9495a5;
+  --task-active-color: #494c6b;
+  --task-completed-color: #d1d2da;
+  --active-filter: #3a7cfd;
+  --inactive-filter: #9495a5;
+  --inactive-filter-hover: #494c6b;
+
+  --red: hsl(346, 99%, 55%);
+  --shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+
+  --background-image-mobile: url("/bg-mobile-light.jpg");
+  --background-image-desktop: url("/bg-desktop-light.jpg");
+}
+
+[data-theme="dark"] {
+  --background-primary: #171823;
+  --background-elements: #25273d;
+  --background-dragging: #30334f;
+  --border-color: #393a4b;
+  --placeholder-color: #767992;
+  --task-active-color: #c8cbe7;
+  --task-completed-color: #4d5067;
+  --inactive-filter: #5b5e7e;
+  --inactive-filter-hover: #e3e4f1;
+
+  --red: #ff507a;
+  --shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
+
+  --background-image-mobile: url("/bg-mobile-dark.jpg");
+  --background-image-desktop: url("/bg-desktop-dark.jpg");
+}
+
+html,
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.8rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: var(--background-image-mobile) no-repeat top center,
+    var(--background-primary);
+  background-size: 100% 20rem;
+
+  @include sm {
+    background-image: var(--background-image-desktop);
+    background-size: 100% 30rem;
+  }
+}
+
+#root {
+  max-width: 54rem;
+  width: 100%;
+  margin: 4.8rem 2.5rem 2rem 2.6rem;
+
+  @include sm {
+    margin-top: 7rem;
+  }
+}

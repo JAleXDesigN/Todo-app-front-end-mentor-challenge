@@ -1,0 +1,31 @@
+.root {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  color: var(--inactive-filter);
+  font-size: 1.4rem;
+  line-height: normal;
+  letter-spacing: -0.194px;
+}
+
+.filter {
+  font-weight: 700;
+  cursor: pointer;
+
+  &:not(.filter_active):hover {
+    color: var(--inactive-filter-hover);
+  }
+}
+
+.active {
+  color: var(--active-filter);
+}
+
+.clear {
+  font-weight: 400;
+
+  &:hover {
+    cursor: pointer;
+    color: var(--inactive-filter-hover);
+  }
+}

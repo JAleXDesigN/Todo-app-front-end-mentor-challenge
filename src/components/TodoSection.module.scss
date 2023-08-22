@@ -1,0 +1,19 @@
+.main {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.4rem;
+}
+
+.todo_section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 1.6rem;
+}
+
+.dnd_text {
+  margin-top: 4rem;
+  text-align: center;
+  color: var(--inactive-filter);
+}

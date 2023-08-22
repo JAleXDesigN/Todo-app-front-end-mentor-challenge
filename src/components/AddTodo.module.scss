@@ -1,0 +1,49 @@
+@import "../mixins";
+
+.root {
+  width: 100%;
+  position: relative;
+}
+
+.input {
+  border: none;
+  outline: 2px solid transparent;
+  outline-offset: -3px;
+  width: inherit;
+  height: 4.8rem;
+  caret-color: var(--active-filter);
+  padding: 0 2rem 0 5.2rem;
+  color: var(--task-active-color);
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.25px;
+  border-radius: 0.5rem;
+  background: var(--background-elements);
+
+  &::placeholder {
+    color: var(--placeholder-color);
+    opacity: 1;
+  }
+
+  &:focus-visible {
+    outline-color: var(--active-filter);
+  }
+}
+
+.check {
+  position: absolute;
+  left: 2rem;
+  top: 1.4rem;
+}
+
+@include md {
+  .input {
+    height: 6.4rem;
+    padding: 0 2.4rem 0 7.2rem;
+  }
+
+  .check {
+    left: 2.4rem;
+    top: 2rem;
+  }
+}

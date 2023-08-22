@@ -1,0 +1,116 @@
+@import "../mixins";
+
+.root {
+  position: relative;
+  padding: 0;
+  background-color: var(--background-elements);
+  width: 100%;
+  height: min-content;
+  border-bottom: 1px solid var(--border-color);
+  user-select: none;
+
+  &:hover,
+  &:focus-within {
+    .clear_button {
+      display: flex;
+    }
+  }
+}
+
+.is_dragging {
+  z-index: 50;
+  background-color: var(--background-dragging);
+  border: 1px solid var(--border-color);
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 5.2rem;
+  padding: 1.25rem 5.2rem;
+  color: var(--task-active-color);
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.25px;
+  outline: 2px solid transparent;
+  outline-offset: -4px;
+  cursor: move;
+
+  &:focus-visible {
+    outline-color: var(--active-filter);
+  }
+}
+
+.is_completed {
+  color: var(--task-completed-color);
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.25px;
+  text-decoration-line: line-through;
+}
+
+.check {
+  left: 2rem;
+  right: auto;
+  top: 1.6rem;
+  display: inline-flex;
+}
+
+.clear_button {
+  position: absolute;
+  outline: 1px solid transparent;
+  outline-offset: 2px;
+  border-radius: 0.5rem;
+  right: 2rem;
+  top: 1.6rem;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--task-active-color);
+
+  &:hover {
+    cursor: pointer;
+    color: var(--red);
+  }
+
+  &:focus-visible {
+    outline-color: var(--red);
+    color: var(--red);
+  }
+
+  & > svg {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+}
+
+@include sm {
+  .task {
+    padding: 1.5rem 7.2rem;
+    min-height: 6.4rem;
+  }
+
+  .check {
+    left: 2.4rem;
+    top: 2rem;
+  }
+
+  .clear_button {
+    display: none;
+    width: 2.4rem;
+    height: 2.4rem;
+    right: 2.4rem;
+    top: 2rem;
+
+    & > svg {
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+  }
+}

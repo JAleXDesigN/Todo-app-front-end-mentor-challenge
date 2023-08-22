@@ -1,0 +1,31 @@
+@import "../mixins";
+
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 1.9rem;
+}
+
+.mobile {
+  min-height: 4.8rem;
+  padding: 1rem;
+  row-gap: 0.7rem;
+  background-color: var(--background-elements);
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+}
+
+.desktop {
+  display: none;
+}
+
+@include sm {
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: flex;
+  }
+}
