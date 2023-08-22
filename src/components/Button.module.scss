@@ -12,7 +12,7 @@
   font-weight: 700;
   cursor: pointer;
 
-  &:not(.filter_active):hover {
+  &:not(.active):hover {
     color: var(--inactive-filter-hover);
   }
 }
